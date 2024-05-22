@@ -1,6 +1,9 @@
-#include <iostream>
+#include "Lib.hpp"
+#include "Constants.hpp"
 
-int main () {
-    printf("please");
-    return 0; 
+int main()
+{
+    runRestaurant();
+    
+    return 0;
 }
