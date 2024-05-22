@@ -1,13 +1,11 @@
 #ifndef UTILITY_HPP
 #define UTILITY_HPP
 
-#include "Lib.hpp"
-#include "Constants.hpp"
+#include <cstdlib>
+#include <ctime>
 
 int delay(int time);
-int randomRange(int min, int max);
 int binaryRandom();
-void eatMeal (int time);
-void runRestaurant();
+int randomRange(int min, int max);
 
 #endif

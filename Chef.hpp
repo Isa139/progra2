@@ -1,15 +1,20 @@
 #ifndef CHEF_HPP
 #define CHEF_HPP
 
-#include "Lib.hpp"
-#include "Constants.hpp"
+#include <queue>
+#include <mutex>
 #include "Utility.hpp"
-class Chef
-{
+#include "Order.hpp"
+
+class Chef {
 private:
+    std::queue<Order> *orderQueue;
+    std::mutex *orderQueueMutex;
+
 public:
-    Chef();
-    int cookMeal(int preparationTime);
+    Chef(std::queue<Order> *orderQueue, std::mutex *orderQueueMutex);
+    int calculatePreparationTime(int preparationTime);
+    void cookMeal(int preparationTime);
 };
 
-#endif // CUSTOMER_HPP
+#endif

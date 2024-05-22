@@ -1,27 +1,12 @@
-#ifndef PARTY_HPP
-#define PARTY_HPP
+#include "Party.hpp"
 
-#include "Lib.hpp"
-#include "Constants.hpp"
-#include "Customer.hpp"
+Party::Party(int size, int &customerCounter) : size(size) {
+    std::string menu[] = {"Cinnamon Rolls", "Apple Pie", "Cookies", "Chocolate Cupcakes", "Donuts", "Croissant", "Brownies", "Carrot Cake", "Caramel Flan", "Banana Muffins"};
 
-class Party {
-public:
-    int size;
-    Customer* customers[MAX_CUSTOMERS_PER_TABLE];
+    for (int i = 0; i < size; ++i) {
+        int choice = rand() % 10;
+        std::string selectedMeal = menu[choice];
 
-    Party(int size, int &customerCounter) : size(size) {
-        for (int i = 0; i < size && i < MAX_CUSTOMERS_PER_TABLE; ++i) {
-            customers[i] = new Customer();
-            customers[i]->name = "Customer " + std::to_string(customerCounter++);
-        }
+        customers[i] = new Customer("Customer" + std::to_string(customerCounter++), selectedMeal);
     }
-
-    ~Party() {
-        for (int i = 0; i < size && i < MAX_CUSTOMERS_PER_TABLE; ++i) {
-            delete customers[i];
-        }
-    }
-};
-
-#endif // PARTY_HPP
+}

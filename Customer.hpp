@@ -1,28 +1,24 @@
 #ifndef CUSTOMER_HPP
 #define CUSTOMER_HPP
 
-#include "Lib.hpp"
-#include "Constants.hpp"
-
-using namespace std;
+#include <string>
+#include <iostream>
+#include "Utility.hpp"
 
 class Customer {
 private:
-    string selectedMeal;
+    std::string selectedMeal;
 
 public:
-    string name;
+    std::string name;
     char status;
 
-    // Default constructor
-    Customer() : name(""), selectedMeal(""), status('S') {}  // Setting default values for name, selectedMeal, and status
+    Customer(std::string name, std::string meal);
 
-    // Parameterized constructor
-    Customer(string name, string meal) : name(name), selectedMeal(meal), status('S') {}
-
-    string getMeal();
+    std::string getMeal();
     void orderMeal();
+    int calculateEatingTime(int eatingTime);
     void eatMeal(int durationTime);
 };
 
-#endif // CUSTOMER_HPP
+#endif

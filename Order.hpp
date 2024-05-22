@@ -1,19 +1,14 @@
 #ifndef ORDER_HPP
 #define ORDER_HPP
 
-#include "Lib.hpp"
-#include "Constants.hpp"
-#include "Utility.hpp"
-#include "Customer.hpp"
+#include <string>
 
-using namespace std;
+struct Order {
+    std::string customerName;
+    std::string mealName;
 
-struct Order
-{
-    string customerName;
-    string mealName;
-
-    Order(string customerName, string mealName) : customerName(customerName), mealName(mealName) {}
+    Order();
+    Order(std::string customerName, std::string mealName);
 };
 
-#endif // ORDER_HPP
+#endif
