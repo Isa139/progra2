@@ -1,8 +1,8 @@
+#ifndef TABLE_HPP
+#define TABLE_HPP
+
 #include "Lib.hpp"
 #include "Constants.hpp"
-#include "Utility.hpp"
-#include "Party.hpp"
-#include "Waiter.hpp"
 
 using namespace std;
 
@@ -26,3 +26,5 @@ public:
     bool isOccupied();
     void manageTables(queue<Party *> &customerQueue, mutex &queueMutex);
 };
+
+#endif
