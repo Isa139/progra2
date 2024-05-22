@@ -2,5 +2,5 @@
 
 int main () {
     printf("please");
-    return 1; 
+    return 0; 
 }
